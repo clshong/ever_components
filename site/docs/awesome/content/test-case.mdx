@@ -1,0 +1,69 @@
+import TestCase from '@site/src/components/awesome/test-case'
+
+# 测试用例
+## 全部通过
+<TestCase
+  title="全部通过"
+  items={
+    [
+      {
+        title: '数字值比较如预期',
+        expectValue: 1,
+        actuallyValue: 1
+      },
+      {
+        title: '字符串值比较如预期',
+        expectValue: 'a',
+        actuallyValue: 'a'
+      },
+      {
+        title: '对象值比较如预期',
+        expectValue: {a: 3},
+        actuallyValue: {a: 3}
+      },
+      {
+        title: '数组值比较如预期',
+        expectValue: [1, 2, 3],
+        actuallyValue: [1, 2, 3]
+      },
+    ]
+  }
+/>
+
+## 部分通过
+<TestCase
+  title="部分通过"
+  items={
+    [
+      {
+        title: '数字值比较',
+        expectValue: 1,
+        actuallyValue: 1
+      },
+      {
+        title: '字符串值比较',
+        expectValue: 'a',
+        actuallyValue: 'b'
+      },
+    ]
+  }
+/>
+
+## 全部不通过
+<TestCase
+  title="都不通过"
+  items={
+    [
+      {
+        title: '数字值比较',
+        expectValue: 1,
+        actuallyValue: 2
+      },
+      {
+        title: '字符串值比较',
+        expectValue: 'a',
+        actuallyValue: 'b'
+      },
+    ]
+  }
+/>

@@ -1,0 +1,113 @@
+import Btn from '@site/src/components/awesome/base/button'
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import CodeBlock from '@theme/CodeBlock'
+
+# MDX
+MDX 是 Markdown 的加强版。其除了支持 Markdown 的语法外，还支持在 Markdown 中写 JSX。
+
+## Markdown 常见写法
+**强调** ~~删除线~~ *斜体* `行内代码` 
+
+emoji: :joy: :cry: :+1: 🌏  [emojipedia](https://emojipedia.org/)
+
+
+链接: [MDX 官网](https://mdxjs.com/docs/)，[Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+
+![](/img/docusaurus.png)
+
+{/* 分割线 */}
+
+---------
+
+```js
+// 块级代码
+const arr = [3]
+arr.push(5)
+```
+
+> **学会销售，学会构建，两技傍身，势不可当。**  
+> \-《纳瓦尔宝典》
+
+常见前端框架
+- React
+- Vue
+- Angular
+
+做一个任务的顺序：
+1. 实现UI
+2. 设计数据结构
+3. 实现数据绑定ui
+4. 实现交互
+
+TODO List  
+- [ ] 背20个单词。
+- [ ] 遛狗。
+- [x] 洗衣服。
+
+| 左对齐 | 居中 | 右对齐 |
+| :----------- | :-----------: | -----------: |
+| 1 | 2 | 3 |
+
+	term
+: definition
+
+## JSX
+<Btn>按钮</Btn>
+
+## 详情内容
+<details>
+  <summary>概览</summary>
+  <div>
+    <div>这是详情内容</div>
+    <br/>
+    <details>
+      <summary>
+        嵌套的下拉栏！ 内含惊喜……
+      </summary>
+      <div>
+        😲😲😲😲😲
+      </div>
+    </details>
+  </div>
+</details>
+
+## Tabs 组件
+<Tabs>
+  <TabItem value="npm" label="npm" default>
+    <CodeBlock language="bash">
+    npm install --save @docusaurus/theme-mermaid
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="Yarn" label="Yarn">
+    <CodeBlock language="bash">
+    yarn add @docusaurus/theme-mermaid
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+:::tip
+TabItem 里的 Markdown 不会被解析。
+:::
+
+
+## 告示
+:::note
+永远叫不醒装睡的人。
+:::
+
+:::tip
+这点尤其重要。
+:::
+
+:::info
+陌上花开缓缓归。
+:::
+
+:::caution
+该 API 已废弃。
+:::
+
+:::danger
+**该删除操作**不可逆，请谨慎操作。
+:::

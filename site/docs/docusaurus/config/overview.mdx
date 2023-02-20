@@ -1,0 +1,107 @@
+import CodeBlock from '@theme/CodeBlock'
+
+# 常用配置
+docusaurus 的配置文件是 `docusaurus.config.js`。 
+
+## 配置左侧菜单
+支持多个左侧菜单。在 `sidebars.js` 里配置。
+
+### 配置多个菜单
+<CodeBlock
+  language='js'
+  title='./sidebars.js'
+>
+  {`const sidebars = {
+    menu1: {...}, // 菜单1
+    menu2: {...}, // 菜单2
+    menu3: {...}, // 菜单3
+  }`}
+</CodeBlock>
+
+### 配置菜单分类
+<CodeBlock
+  language='js'
+>
+  {`{
+  type: 'category',
+  label: '分类名称',
+  collapsed: false, // 分类是否被折叠的默认值
+  items: [
+    // 分类或页面
+  ]
+}`}
+</CodeBlock>
+
+### 配置菜单页面
+<CodeBlock
+  language='js'
+>
+  {`{
+  type: 'doc',
+  label: '名称',
+  id: '路径', // 如：。
+}`}
+</CodeBlock>
+
+:::tip
+id 的路径从 `docs` 目录开始算，不需要加后缀。  
+如：本文的 `id` 是 `docusaurus/config/overview`，在项目中相对路径是：`site/docs/docusaurus/config/overview.mdx`。
+:::
+
+## 页面配置(metadata)
+页面配置是文件开头配置的。用 `---` 包围。
+```
+---
+这里配置
+---
+```
+
+### 不显示右侧大纲视图
+```
+hide_table_of_contents: true
+```
+
+更多见：[官方文档](https://docusaurus.io/docs/markdown-features/head-metadata)。
+
+## 配置中文搜索
+本项目用的是 [@easyops-cn/docusaurus-search-local](https://github.com/easyops-cn/docusaurus-search-local)。
+
+### 安装依赖
+<CodeBlock
+  language='bash'
+  title='sidebars.js'
+>
+  {`$ npm i @easyops-cn/docusaurus-search-local --save
+$ npm i @docusaurus/theme-common --save
+  `}
+</CodeBlock>
+
+### 配置
+<CodeBlock
+  language='js'
+  title='docusaurus.config.js'
+>
+{
+  `themes: [
+  // local search: https://github.com/easyops-cn/docusaurus-search-local
+  [
+    require.resolve("@easyops-cn/docusaurus-search-local"), 
+    /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+    ({
+      language: 'zh',
+      indexBlog: false,
+      indexPages: true,
+      hashed: true,
+    })
+  ]
+]`
+}
+</CodeBlock>
+
+## 多语言
+```js
+i18n: {
+  defaultLocale: 'zh-Hans',
+  locales: ['zh-Hans'],
+}
+````

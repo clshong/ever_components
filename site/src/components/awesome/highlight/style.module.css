@@ -1,0 +1,9 @@
+.codeHighLight pre {
+  margin-bottom: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.codeHighLight + .codeHighLight {
+  border-top: 1px solid rgba(85,102,119,.18);
+}

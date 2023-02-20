@@ -1,0 +1,37 @@
+import Tabs from '@theme/Tabs'
+import TabItem from '@theme/TabItem'
+import CodeBlock from '@theme/CodeBlock'
+
+
+# 流程图
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
+支持流程图需要安装和配置 [Mermaid](https://mermaid.js.org/)插件。
+
+## 安装依赖
+<Tabs>
+  <TabItem value="npm" label="npm" default>
+    <CodeBlock language="bash">
+    npm install --save @docusaurus/theme-mermaid
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="Yarn" label="Yarn">
+    <CodeBlock language="bash">
+    yarn add @docusaurus/theme-mermaid
+    </CodeBlock>
+  </TabItem>
+</Tabs>
+
+## 配置
+```js
+markdown: {
+  mermaid: true,
+},
+themes: ['@docusaurus/theme-mermaid']
+```
